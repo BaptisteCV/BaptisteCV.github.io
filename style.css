@@ -14,19 +14,19 @@ header {
 
 /* Bandeau indicateur de page */
 .page-banner {
-    background-color: #999;      /* couleur différente du header */
+    background-color: #999;
     text-align: center;
-    padding: 25px 0;             /* hauteur du banner */
+    padding: 25px 0;
     font-weight: bold;
     color: #fff;
-    font-size: 2em;              /* texte plus grand */
+    font-size: 2em;
 }
 
 /* Barre de navigation */
 .navbar {
     display: flex;
     justify-content: center;
-    padding: 10px 0;             /* légèrement plus petite */
+    padding: 10px 0;
     background-color: #555;
 }
 
@@ -35,9 +35,9 @@ header {
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
-    padding: 8px 18px;           /* proportionné à la navbar réduite */
+    padding: 8px 18px;
     border-radius: 6px;
-    background-color: #777;       /* bouton légèrement plus clair que navbar */
+    background-color: #777;
     transition: all 0.3s ease;
     font-size: 1em;
 }
@@ -84,7 +84,7 @@ header {
     margin: 12px 0;
     display: flex;
     align-items: center;
-    gap: 20px; /* espace entre le bouton et le texte */
+    gap: 20px;
 }
 
 /* Boutons avec largeur fixe */
@@ -98,8 +98,8 @@ header {
     font-weight: bold;
     transition: all 0.3s ease;
 
-    width: 200px;      /* largeur fixe pour tous les boutons */
-    text-align: center; /* centre le texte dans le bouton */
+    width: 200px;
+    text-align: center;
 }
 
 .memoire-btn:hover {
@@ -109,5 +109,66 @@ header {
 .memoire-desc {
     font-size: 1em;
     color: #333;
-    flex: 1; /* occupe le reste de la ligne */
+    flex: 1;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Petits écrans (tablettes, smartphones) */
+@media (max-width: 768px) {
+    .page-banner {
+        font-size: 1.5em;
+        padding: 15px 0;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-btn {
+        margin: 8px 0;
+        width: 80%; /* boutons plus larges */
+        text-align: center;
+    }
+
+    .main-content h1 {
+        font-size: 2em;
+    }
+
+    .main-content p {
+        font-size: 1em;
+    }
+
+    .liste-memoires li {
+        flex-direction: column;
+        align-items: flex-start; /* bouton et texte empilés à gauche */
+    }
+
+    .memoire-btn {
+        width: 100%; /* bouton prend toute la largeur */
+        max-width: 300px;
+    }
+
+    .memoire-desc {
+        margin-top: 8px;
+    }
+}
+
+/* Très petits écrans (téléphones) */
+@media (max-width: 480px) {
+    .page-banner {
+        font-size: 1.2em;
+        padding: 10px 0;
+    }
+
+    .nav-btn {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    .memoire-btn {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
 }
