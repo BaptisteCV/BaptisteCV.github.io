@@ -116,6 +116,9 @@ header {
 
 /* Petits écrans (tablettes, smartphones) */
 @media (max-width: 768px) {
+    /*body {
+        background-color: blue;  fond gris un peu plus foncé */
+    }
     .page-banner {
         font-size: 1.5em;
         padding: 15px 0;
@@ -142,7 +145,7 @@ header {
 
     .liste-memoires li {
         flex-direction: column;
-        align-items: flex-start; /* bouton et texte empilés à gauche */
+        align-items: flex-start;
     }
     .memoire-btn {
         width: 100%;
@@ -171,5 +174,6 @@ header {
     .memoire-btn {
         font-size: 0.9em;
         padding: 8px 12px;
+        text-align: center;
     }
 }
