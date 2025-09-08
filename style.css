@@ -1,12 +1,12 @@
-/* Style général */
+/* ---------------- STYLE GÉNÉRAL ---------------- */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f0f0f0; /* fond gris clair */
+    background-color: #f0f0f0;
 }
 
-/* Header (empile le banner et la navbar) */
+/* Header */
 header {
     display: flex;
     flex-direction: column;
@@ -22,15 +22,15 @@ header {
     font-size: 2em;
 }
 
-/* Barre de navigation */
+/* ---------------- NAVBAR ---------------- */
 .navbar {
     display: flex;
     justify-content: center;
+    flex-direction: row;
     padding: 10px 0;
     background-color: #555;
 }
 
-/* Boutons de navigation */
 .nav-btn {
     color: #fff;
     text-decoration: none;
@@ -42,52 +42,59 @@ header {
     font-size: 1em;
 }
 
-.nav-btn:hover {
-    background-color: #333;
-    cursor: pointer;
-}
+    .nav-btn:hover {
+        background-color: #333;
+        cursor: pointer;
+    }
 
-/* Contenu principal centré */
+/* ---------------- CONTENU PRINCIPAL ---------------- */
 .main-content {
-    text-align: center;
-    margin: 50px 20px;
+    text-align: left;
+    margin: 50px auto;
+    max-width: 900px;
+    padding: 0 20px;
 }
 
-.main-content h1 {
-    font-size: 2.5em;
-    color: #333;
-}
+    .main-content h1,
+    .main-content h2,
+    .main-content h3 {
+        text-align: center;
+        color: #333;
+        margin-top: 30px;
+    }
 
-.main-content p {
-    font-size: 1.2em;
-    color: #555;
-}
+    .main-content h1 {
+        font-size: 2.5em;
+    }
 
-/* Lien retour accueil */
-.home-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #555;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
+    .main-content h2 {
+        font-size: 2em;
+    }
 
-.home-link:hover {
-    background-color: #333;
-}
+    .main-content p {
+        font-size: 1.2em;
+        color: #555;
+        line-height: 1.6;
+    }
 
-/* Style pour la liste des mémoires */
-.liste-memoires li {
-    margin: 12px 0;
+/* ---------------- BOUTONS ET LISTES ---------------- */
+.liste-memoires {
+    list-style-type: none; /* supprime les puces */
+    padding: 0;
+    margin: 20px 0;
     display: flex;
-    align-items: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 12px;
 }
 
-/* Boutons avec largeur fixe */
+    .liste-memoires li {
+        display: flex;
+        flex-direction: row; /* deux colonnes */
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+/* Boutons TP */
 .memoire-btn {
     display: inline-block;
     text-decoration: none;
@@ -97,33 +104,23 @@ header {
     border-radius: 6px;
     font-weight: bold;
     transition: all 0.3s ease;
-
-    width: 200px;
     text-align: center;
+    flex: 0 0 200px; /* colonne boutons fixe */
 }
 
-.memoire-btn:hover {
-    background-color: #333;
-}
+    .memoire-btn:hover {
+        background-color: #333;
+    }
 
+/* Texte descriptif à droite */
 .memoire-desc {
+    flex: 1 1 auto; /* prend le reste de l'espace disponible */
     font-size: 1em;
     color: #333;
-    flex: 1;
 }
 
 /* ---------------- RESPONSIVE ---------------- */
-
-/* Petits écrans (tablettes, smartphones) */
 @media (max-width: 768px) {
-    /*body {
-        background-color: blue;  fond gris un peu plus foncé */
-    }
-    .page-banner {
-        font-size: 1.5em;
-        padding: 15px 0;
-    }
-
     .navbar {
         flex-direction: column;
         align-items: center;
@@ -131,7 +128,7 @@ header {
 
     .nav-btn {
         margin: 8px 0;
-        width: 80%; /* boutons plus larges */
+        width: 80%;
         text-align: center;
     }
 
@@ -139,27 +136,31 @@ header {
         font-size: 2em;
     }
 
+    .main-content h2 {
+        font-size: 1.5em;
+    }
+
     .main-content p {
         font-size: 1em;
     }
 
     .liste-memoires li {
-        flex-direction: column;
+        flex-direction: column; /* bouton au dessus, texte en dessous sur tablettes */
         align-items: flex-start;
     }
+
     .memoire-btn {
         width: 100%;
         max-width: 300px;
-        text-align: center;
     }
 
     .memoire-desc {
+        width: 100%;
         margin-top: 8px;
-        text-align: center; /* texte centré sous le bouton */
+        text-align: center;
     }
 }
 
-/* Très petits écrans (téléphones) */
 @media (max-width: 480px) {
     .page-banner {
         font-size: 1.2em;
@@ -174,6 +175,5 @@ header {
     .memoire-btn {
         font-size: 0.9em;
         padding: 8px 12px;
-        text-align: center;
     }
 }
