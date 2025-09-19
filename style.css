@@ -173,7 +173,24 @@ header {
     }
 
     .memoire-btn {
-        font-size: 0.9em;
-        padding: 8px 12px;
+        width: 100%; /* largeur fixe ou max-width : tu peux ajuster */
+        max-width: 300px; /* fixe la largeur max */
+        padding: 6px 12px; /* padding vertical plus petit pour adapter la hauteur */
+        flex: 0 0 auto; /* empêche le flex de forcer la hauteur */
+        font-size: 0.9em; /* conserve la taille de police */
+        box-sizing: border-box; /* pour que le padding n’augmente pas la largeur */
+    }
+    
+    .liste-memoires li {
+         flex-direction: column; /* bouton au dessus, texte en dessous */
+         align-items: flex-start;
+         gap: 0; /* supprime l’espacement entre bouton et texte */
+         margin-bottom: 16px; /* espace jusqu’au bouton suivant */
+    }
+
+    .memoire-desc {
+         width: 100%;
+         margin-top: 4px; /* petit espace juste après le bouton */
+         text-align: left; /* ou center si tu préfères */
     }
 }
